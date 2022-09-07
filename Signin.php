@@ -1,7 +1,6 @@
 <?php
 include("DbConnection.php");
 include("index.php") ;
-    // echo "testin here ";
     $conn = new DbConnect();
     $db = $conn->connection();
     $method = $_SERVER['REQUEST_METHOD'];
