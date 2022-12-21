@@ -9,7 +9,7 @@ include("index.php") ;
         case 'POST':
             $user = json_decode(file_get_contents('php://input'),true) ;
             $email = $user['email'];
-            $psd = md5($user['password']) ;
+            $psd = $user['password'] ;
             $sql = "SELECT * FROM theuser WHERE Email = :email AND Pass_word = :psd" ;
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':email', $email,PDO::PARAM_STR);
