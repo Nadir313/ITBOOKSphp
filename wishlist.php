@@ -8,8 +8,6 @@ $method = $_SERVER['REQUEST_METHOD'];
 switch($method) {
     case 'POST':
         $wishlistbookdata = json_decode(file_get_contents('php://input'));
-        // $_SESSION['userId'] = $wishlistbookdata->userId ;
-        // // echo $_SESSION['userId'] ;
         $sql = "INSERT INTO wishlist(id, Image,Title,SubTitle,UserId)
          values(null, :Image, :title, :subtitle,:UserId)";
         $stmt = $db->prepare($sql);
